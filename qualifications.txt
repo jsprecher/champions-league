@@ -1,0 +1,547 @@
+Rank,Team,Season,League,qualify
+1,Bayern München,2014-2015,Bundesliga,TRUE
+2,VfL Wolfsburg,2014-2015,Bundesliga,TRUE
+3,Bor. Mönchengladbach,2014-2015,Bundesliga,TRUE
+4,Bayer Leverkusen,2014-2015,Bundesliga,TRUE
+5,FC Augsburg,2014-2015,Bundesliga,FALSE
+6,FC Schalke 04,2014-2015,Bundesliga,FALSE
+7,Borussia Dortmund,2014-2015,Bundesliga,FALSE
+8,1899 Hoffenheim,2014-2015,Bundesliga,FALSE
+9,Eintracht Frankfurt,2014-2015,Bundesliga,FALSE
+10,Werder Bremen,2014-2015,Bundesliga,FALSE
+11,1. FSV Mainz 05,2014-2015,Bundesliga,FALSE
+12,1. FC Köln,2014-2015,Bundesliga,FALSE
+13,Hannover 96,2014-2015,Bundesliga,FALSE
+14,VfB Stuttgart,2014-2015,Bundesliga,FALSE
+15,Hertha BSC,2014-2015,Bundesliga,FALSE
+16,Hamburger SV,2014-2015,Bundesliga,FALSE
+17,SC Freiburg,2014-2015,Bundesliga,FALSE
+18,SC Paderborn 07,2014-2015,Bundesliga,FALSE
+1,FC Barcelona,2014-2015,La Liga,TRUE
+2,Real Madrid,2014-2015,La Liga,TRUE
+3,Atlético Madrid,2014-2015,La Liga,TRUE
+4,Valencia CF,2014-2015,La Liga,TRUE
+5,Sevilla FC,2014-2015,La Liga,FALSE
+6,Villarreal CF,2014-2015,La Liga,FALSE
+7,Athletic Bilbao,2014-2015,La Liga,FALSE
+8,Celta Vigo,2014-2015,La Liga,FALSE
+9,Málaga CF,2014-2015,La Liga,FALSE
+10,Espanyol Barcelona,2014-2015,La Liga,FALSE
+11,Rayo Vallecano,2014-2015,La Liga,FALSE
+12,Real Sociedad,2014-2015,La Liga,FALSE
+13,Elche CF,2014-2015,La Liga,FALSE
+14,Levante UD,2014-2015,La Liga,FALSE
+15,Getafe CF,2014-2015,La Liga,FALSE
+16,Deportivo La Coruña,2014-2015,La Liga,FALSE
+17,Granada CF,2014-2015,La Liga,FALSE
+18,SD Eibar,2014-2015,La Liga,FALSE
+19,UD Almería,2014-2015,La Liga,FALSE
+20,Córdoba CF,2014-2015,La Liga,FALSE
+1,Chelsea FC,2014-2015,Premier League,TRUE
+2,Manchester City,2014-2015,Premier League,TRUE
+3,Arsenal FC,2014-2015,Premier League,TRUE
+4,Manchester United,2014-2015,Premier League,TRUE
+5,Tottenham Hotspur,2014-2015,Premier League,FALSE
+6,Liverpool FC,2014-2015,Premier League,FALSE
+7,Southampton FC,2014-2015,Premier League,FALSE
+8,Swansea City,2014-2015,Premier League,FALSE
+9,Stoke City,2014-2015,Premier League,FALSE
+10,Crystal Palace,2014-2015,Premier League,FALSE
+11,Everton FC,2014-2015,Premier League,FALSE
+12,West Ham United,2014-2015,Premier League,FALSE
+13,West Bromwich Albion,2014-2015,Premier League,FALSE
+14,Leicester City,2014-2015,Premier League,FALSE
+15,Newcastle United,2014-2015,Premier League,FALSE
+16,Sunderland AFC,2014-2015,Premier League,FALSE
+17,Aston Villa,2014-2015,Premier League,FALSE
+18,Hull City,2014-2015,Premier League,FALSE
+19,Burnley FC,2014-2015,Premier League,FALSE
+20,Queens Park Rangers,2014-2015,Premier League,FALSE
+1,Juventus,2014-2015,Serie A,TRUE
+2,AS Roma,2014-2015,Serie A,TRUE
+3,Lazio Roma,2014-2015,Serie A,TRUE
+4,ACF Fiorentina,2014-2015,Serie A,TRUE
+5,SSC Napoli,2014-2015,Serie A,FALSE
+6,Genoa CFC,2014-2015,Serie A,FALSE
+7,Sampdoria,2014-2015,Serie A,FALSE
+8,Inter,2014-2015,Serie A,FALSE
+9,Torino FC,2014-2015,Serie A,FALSE
+10,AC Milan,2014-2015,Serie A,FALSE
+11,US Palermo,2014-2015,Serie A,FALSE
+12,Sassuolo Calcio,2014-2015,Serie A,FALSE
+13,Hellas Verona,2014-2015,Serie A,FALSE
+14,Chievo Verona,2014-2015,Serie A,FALSE
+15,Empoli FC,2014-2015,Serie A,FALSE
+16,Udinese Calcio,2014-2015,Serie A,FALSE
+17,Atalanta,2014-2015,Serie A,FALSE
+18,Cagliari Calcio,2014-2015,Serie A,FALSE
+19,AC Cesena,2014-2015,Serie A,FALSE
+20,Parma Calcio 1913,2014-2015,Serie A,FALSE
+1,Bayern München,2015-2016,Bundesliga,TRUE
+2,Borussia Dortmund,2015-2016,Bundesliga,TRUE
+3,Bayer Leverkusen,2015-2016,Bundesliga,TRUE
+4,Bor. Mönchengladbach,2015-2016,Bundesliga,TRUE
+5,FC Schalke 04,2015-2016,Bundesliga,FALSE
+6,1. FSV Mainz 05,2015-2016,Bundesliga,FALSE
+7,Hertha BSC,2015-2016,Bundesliga,FALSE
+8,VfL Wolfsburg,2015-2016,Bundesliga,FALSE
+9,1. FC Köln,2015-2016,Bundesliga,FALSE
+10,Hamburger SV,2015-2016,Bundesliga,FALSE
+11,FC Ingolstadt 04,2015-2016,Bundesliga,FALSE
+12,FC Augsburg,2015-2016,Bundesliga,FALSE
+13,Werder Bremen,2015-2016,Bundesliga,FALSE
+14,SV Darmstadt 98,2015-2016,Bundesliga,FALSE
+15,1899 Hoffenheim,2015-2016,Bundesliga,FALSE
+16,Eintracht Frankfurt,2015-2016,Bundesliga,FALSE
+17,VfB Stuttgart,2015-2016,Bundesliga,FALSE
+18,Hannover 96,2015-2016,Bundesliga,FALSE
+1,FC Barcelona,2015-2016,La Liga,TRUE
+2,Real Madrid,2015-2016,La Liga,TRUE
+3,Atlético Madrid,2015-2016,La Liga,TRUE
+4,Villarreal CF,2015-2016,La Liga,TRUE
+5,Athletic Bilbao,2015-2016,La Liga,FALSE
+6,Celta Vigo,2015-2016,La Liga,FALSE
+7,Sevilla FC,2015-2016,La Liga,FALSE
+8,Málaga CF,2015-2016,La Liga,FALSE
+9,Real Sociedad,2015-2016,La Liga,FALSE
+10,Real Betis,2015-2016,La Liga,FALSE
+11,UD Las Palmas,2015-2016,La Liga,FALSE
+12,Valencia CF,2015-2016,La Liga,FALSE
+13,Espanyol Barcelona,2015-2016,La Liga,FALSE
+14,SD Eibar,2015-2016,La Liga,FALSE
+15,Deportivo La Coruña,2015-2016,La Liga,FALSE
+16,Granada CF,2015-2016,La Liga,FALSE
+17,Sporting Gijón,2015-2016,La Liga,FALSE
+18,Rayo Vallecano,2015-2016,La Liga,FALSE
+19,Getafe CF,2015-2016,La Liga,FALSE
+20,Levante UD,2015-2016,La Liga,FALSE
+1,Leicester City,2015-2016,Premier League,TRUE
+2,Arsenal FC,2015-2016,Premier League,TRUE
+3,Tottenham Hotspur,2015-2016,Premier League,TRUE
+4,Manchester City,2015-2016,Premier League,TRUE
+5,Manchester United,2015-2016,Premier League,FALSE
+6,Southampton FC,2015-2016,Premier League,FALSE
+7,West Ham United,2015-2016,Premier League,FALSE
+8,Liverpool FC,2015-2016,Premier League,FALSE
+9,Stoke City,2015-2016,Premier League,FALSE
+10,Chelsea FC,2015-2016,Premier League,FALSE
+11,Everton FC,2015-2016,Premier League,FALSE
+12,Swansea City,2015-2016,Premier League,FALSE
+13,Watford FC,2015-2016,Premier League,FALSE
+14,West Bromwich Albion,2015-2016,Premier League,FALSE
+15,Crystal Palace,2015-2016,Premier League,FALSE
+16,AFC Bournemouth,2015-2016,Premier League,FALSE
+17,Sunderland AFC,2015-2016,Premier League,FALSE
+18,Newcastle United,2015-2016,Premier League,FALSE
+19,Norwich City,2015-2016,Premier League,FALSE
+20,Aston Villa,2015-2016,Premier League,FALSE
+1,Juventus,2015-2016,Serie A,TRUE
+2,SSC Napoli,2015-2016,Serie A,TRUE
+3,AS Roma,2015-2016,Serie A,TRUE
+4,Inter,2015-2016,Serie A,TRUE
+5,ACF Fiorentina,2015-2016,Serie A,FALSE
+6,Sassuolo Calcio,2015-2016,Serie A,FALSE
+7,AC Milan,2015-2016,Serie A,FALSE
+8,Lazio Roma,2015-2016,Serie A,FALSE
+9,Chievo Verona,2015-2016,Serie A,FALSE
+10,Empoli FC,2015-2016,Serie A,FALSE
+11,Genoa CFC,2015-2016,Serie A,FALSE
+12,Torino FC,2015-2016,Serie A,FALSE
+13,Atalanta,2015-2016,Serie A,FALSE
+14,Bologna FC,2015-2016,Serie A,FALSE
+15,Sampdoria,2015-2016,Serie A,FALSE
+16,US Palermo,2015-2016,Serie A,FALSE
+17,Udinese Calcio,2015-2016,Serie A,FALSE
+18,Carpi FC,2015-2016,Serie A,FALSE
+19,Frosinone Calcio,2015-2016,Serie A,FALSE
+20,Hellas Verona,2015-2016,Serie A,FALSE
+1,Bayern München,2016-2017,Bundesliga,TRUE
+2,RB Leipzig,2016-2017,Bundesliga,TRUE
+3,Borussia Dortmund,2016-2017,Bundesliga,TRUE
+4,1899 Hoffenheim,2016-2017,Bundesliga,TRUE
+5,1. FC Köln,2016-2017,Bundesliga,FALSE
+6,Hertha BSC,2016-2017,Bundesliga,FALSE
+7,SC Freiburg,2016-2017,Bundesliga,FALSE
+8,Werder Bremen,2016-2017,Bundesliga,FALSE
+9,Bor. Mönchengladbach,2016-2017,Bundesliga,FALSE
+10,FC Schalke 04,2016-2017,Bundesliga,FALSE
+11,Eintracht Frankfurt,2016-2017,Bundesliga,FALSE
+12,Bayer Leverkusen,2016-2017,Bundesliga,FALSE
+13,FC Augsburg,2016-2017,Bundesliga,FALSE
+14,Hamburger SV,2016-2017,Bundesliga,FALSE
+15,1. FSV Mainz 05,2016-2017,Bundesliga,FALSE
+16,VfL Wolfsburg,2016-2017,Bundesliga,FALSE
+17,FC Ingolstadt 04,2016-2017,Bundesliga,FALSE
+18,SV Darmstadt 98,2016-2017,Bundesliga,FALSE
+1,Real Madrid,2016-2017,La Liga,TRUE
+2,FC Barcelona,2016-2017,La Liga,TRUE
+3,Atlético Madrid,2016-2017,La Liga,TRUE
+4,Sevilla FC,2016-2017,La Liga,TRUE
+5,Villarreal CF,2016-2017,La Liga,FALSE
+6,Real Sociedad,2016-2017,La Liga,FALSE
+7,Athletic Bilbao,2016-2017,La Liga,FALSE
+8,Espanyol Barcelona,2016-2017,La Liga,FALSE
+9,CD Alavés,2016-2017,La Liga,FALSE
+10,SD Eibar,2016-2017,La Liga,FALSE
+11,Málaga CF,2016-2017,La Liga,FALSE
+12,Valencia CF,2016-2017,La Liga,FALSE
+13,Celta Vigo,2016-2017,La Liga,FALSE
+14,UD Las Palmas,2016-2017,La Liga,FALSE
+15,Real Betis,2016-2017,La Liga,FALSE
+16,Deportivo La Coruña,2016-2017,La Liga,FALSE
+17,CD Leganés,2016-2017,La Liga,FALSE
+18,Sporting Gijón,2016-2017,La Liga,FALSE
+19,CA Osasuna,2016-2017,La Liga,FALSE
+20,Granada CF,2016-2017,La Liga,FALSE
+1,Chelsea FC,2016-2017,Premier League,TRUE
+2,Tottenham Hotspur,2016-2017,Premier League,TRUE
+3,Manchester City,2016-2017,Premier League,TRUE
+4,Liverpool FC,2016-2017,Premier League,TRUE
+5,Arsenal FC,2016-2017,Premier League,FALSE
+6,Manchester United,2016-2017,Premier League,FALSE
+7,Everton FC,2016-2017,Premier League,FALSE
+8,Southampton FC,2016-2017,Premier League,FALSE
+9,AFC Bournemouth,2016-2017,Premier League,FALSE
+10,West Bromwich Albion,2016-2017,Premier League,FALSE
+11,West Ham United,2016-2017,Premier League,FALSE
+12,Leicester City,2016-2017,Premier League,FALSE
+13,Stoke City,2016-2017,Premier League,FALSE
+14,Crystal Palace,2016-2017,Premier League,FALSE
+15,Swansea City,2016-2017,Premier League,FALSE
+16,Burnley FC,2016-2017,Premier League,FALSE
+17,Watford FC,2016-2017,Premier League,FALSE
+18,Hull City,2016-2017,Premier League,FALSE
+19,Middlesbrough FC,2016-2017,Premier League,FALSE
+20,Sunderland AFC,2016-2017,Premier League,FALSE
+1,Juventus,2016-2017,Serie A,TRUE
+2,AS Roma,2016-2017,Serie A,TRUE
+3,SSC Napoli,2016-2017,Serie A,TRUE
+4,Atalanta,2016-2017,Serie A,TRUE
+5,Lazio Roma,2016-2017,Serie A,FALSE
+6,AC Milan,2016-2017,Serie A,FALSE
+7,Inter,2016-2017,Serie A,FALSE
+8,ACF Fiorentina,2016-2017,Serie A,FALSE
+9,Torino FC,2016-2017,Serie A,FALSE
+10,Sampdoria,2016-2017,Serie A,FALSE
+11,Cagliari Calcio,2016-2017,Serie A,FALSE
+12,Sassuolo Calcio,2016-2017,Serie A,FALSE
+13,Udinese Calcio,2016-2017,Serie A,FALSE
+14,Chievo Verona,2016-2017,Serie A,FALSE
+15,Bologna FC,2016-2017,Serie A,FALSE
+16,Genoa CFC,2016-2017,Serie A,FALSE
+17,FC Crotone,2016-2017,Serie A,FALSE
+18,Empoli FC,2016-2017,Serie A,FALSE
+19,US Palermo,2016-2017,Serie A,FALSE
+20,Pescara Calcio,2016-2017,Serie A,FALSE
+1,Bayern München,2017-2018,Bundesliga,TRUE
+2,FC Schalke 04,2017-2018,Bundesliga,TRUE
+3,1899 Hoffenheim,2017-2018,Bundesliga,TRUE
+4,Borussia Dortmund,2017-2018,Bundesliga,TRUE
+5,Bayer Leverkusen,2017-2018,Bundesliga,FALSE
+6,RB Leipzig,2017-2018,Bundesliga,FALSE
+7,VfB Stuttgart,2017-2018,Bundesliga,FALSE
+8,Eintracht Frankfurt,2017-2018,Bundesliga,FALSE
+9,Bor. Mönchengladbach,2017-2018,Bundesliga,FALSE
+10,Hertha BSC,2017-2018,Bundesliga,FALSE
+11,Werder Bremen,2017-2018,Bundesliga,FALSE
+12,FC Augsburg,2017-2018,Bundesliga,FALSE
+13,Hannover 96,2017-2018,Bundesliga,FALSE
+14,1. FSV Mainz 05,2017-2018,Bundesliga,FALSE
+15,SC Freiburg,2017-2018,Bundesliga,FALSE
+16,VfL Wolfsburg,2017-2018,Bundesliga,FALSE
+17,Hamburger SV,2017-2018,Bundesliga,FALSE
+18,1. FC Köln,2017-2018,Bundesliga,FALSE
+1,FC Barcelona,2017-2018,La Liga,TRUE
+2,Atlético Madrid,2017-2018,La Liga,TRUE
+3,Real Madrid,2017-2018,La Liga,TRUE
+4,Valencia CF,2017-2018,La Liga,TRUE
+5,Villarreal CF,2017-2018,La Liga,FALSE
+6,Real Betis,2017-2018,La Liga,FALSE
+7,Sevilla FC,2017-2018,La Liga,FALSE
+8,Getafe CF,2017-2018,La Liga,FALSE
+9,SD Eibar,2017-2018,La Liga,FALSE
+10,Girona FC,2017-2018,La Liga,FALSE
+11,Espanyol Barcelona,2017-2018,La Liga,FALSE
+12,Real Sociedad,2017-2018,La Liga,FALSE
+13,Celta Vigo,2017-2018,La Liga,FALSE
+14,CD Alavés,2017-2018,La Liga,FALSE
+15,Levante UD,2017-2018,La Liga,FALSE
+16,Athletic Bilbao,2017-2018,La Liga,FALSE
+17,CD Leganés,2017-2018,La Liga,FALSE
+18,Deportivo La Coruña,2017-2018,La Liga,FALSE
+19,UD Las Palmas,2017-2018,La Liga,FALSE
+20,Málaga CF,2017-2018,La Liga,FALSE
+1,Manchester City,2017-2018,Premier League,TRUE
+2,Manchester United,2017-2018,Premier League,TRUE
+3,Tottenham Hotspur,2017-2018,Premier League,TRUE
+4,Liverpool FC,2017-2018,Premier League,TRUE
+5,Chelsea FC,2017-2018,Premier League,FALSE
+6,Arsenal FC,2017-2018,Premier League,FALSE
+7,Burnley FC,2017-2018,Premier League,FALSE
+8,Everton FC,2017-2018,Premier League,FALSE
+9,Leicester City,2017-2018,Premier League,FALSE
+10,Newcastle United,2017-2018,Premier League,FALSE
+11,Crystal Palace,2017-2018,Premier League,FALSE
+12,AFC Bournemouth,2017-2018,Premier League,FALSE
+13,West Ham United,2017-2018,Premier League,FALSE
+14,Watford FC,2017-2018,Premier League,FALSE
+15,Brighton & Hove Albion,2017-2018,Premier League,FALSE
+16,Huddersfield Town,2017-2018,Premier League,FALSE
+17,Southampton FC,2017-2018,Premier League,FALSE
+18,Swansea City,2017-2018,Premier League,FALSE
+19,Stoke City,2017-2018,Premier League,FALSE
+20,West Bromwich Albion,2017-2018,Premier League,FALSE
+1,Juventus,2017-2018,Serie A,TRUE
+2,SSC Napoli,2017-2018,Serie A,TRUE
+3,AS Roma,2017-2018,Serie A,TRUE
+4,Inter,2017-2018,Serie A,TRUE
+5,Lazio Roma,2017-2018,Serie A,FALSE
+6,AC Milan,2017-2018,Serie A,FALSE
+7,Atalanta,2017-2018,Serie A,FALSE
+8,ACF Fiorentina,2017-2018,Serie A,FALSE
+9,Torino FC,2017-2018,Serie A,FALSE
+10,Sampdoria,2017-2018,Serie A,FALSE
+11,Sassuolo Calcio,2017-2018,Serie A,FALSE
+12,Genoa CFC,2017-2018,Serie A,FALSE
+13,Chievo Verona,2017-2018,Serie A,FALSE
+14,Udinese Calcio,2017-2018,Serie A,FALSE
+15,Bologna FC,2017-2018,Serie A,FALSE
+16,Cagliari Calcio,2017-2018,Serie A,FALSE
+17,SPAL 2013 Ferrara,2017-2018,Serie A,FALSE
+18,FC Crotone,2017-2018,Serie A,FALSE
+19,Hellas Verona,2017-2018,Serie A,FALSE
+20,Benevento Calcio,2017-2018,Serie A,FALSE
+1,Bayern München,2018-2019,Bundesliga,TRUE
+2,Borussia Dortmund,2018-2019,Bundesliga,TRUE
+3,RB Leipzig,2018-2019,Bundesliga,TRUE
+4,Bayer Leverkusen,2018-2019,Bundesliga,TRUE
+5,Bor. Mönchengladbach,2018-2019,Bundesliga,FALSE
+6,VfL Wolfsburg,2018-2019,Bundesliga,FALSE
+7,Eintracht Frankfurt,2018-2019,Bundesliga,FALSE
+8,Werder Bremen,2018-2019,Bundesliga,FALSE
+9,1899 Hoffenheim,2018-2019,Bundesliga,FALSE
+10,Fortuna Düsseldorf,2018-2019,Bundesliga,FALSE
+11,Hertha BSC,2018-2019,Bundesliga,FALSE
+12,1. FSV Mainz 05,2018-2019,Bundesliga,FALSE
+13,SC Freiburg,2018-2019,Bundesliga,FALSE
+14,FC Schalke 04,2018-2019,Bundesliga,FALSE
+15,FC Augsburg,2018-2019,Bundesliga,FALSE
+16,VfB Stuttgart,2018-2019,Bundesliga,FALSE
+17,Hannover 96,2018-2019,Bundesliga,FALSE
+18,1. FC Nürnberg,2018-2019,Bundesliga,FALSE
+1,FC Barcelona,2018-2019,La Liga,TRUE
+2,Atlético Madrid,2018-2019,La Liga,TRUE
+3,Real Madrid,2018-2019,La Liga,TRUE
+4,Valencia CF,2018-2019,La Liga,TRUE
+5,Getafe CF,2018-2019,La Liga,FALSE
+6,Sevilla FC,2018-2019,La Liga,FALSE
+7,Espanyol Barcelona,2018-2019,La Liga,FALSE
+8,Athletic Bilbao,2018-2019,La Liga,FALSE
+9,Real Sociedad,2018-2019,La Liga,FALSE
+10,Real Betis,2018-2019,La Liga,FALSE
+11,CD Alavés,2018-2019,La Liga,FALSE
+12,SD Eibar,2018-2019,La Liga,FALSE
+13,CD Leganés,2018-2019,La Liga,FALSE
+14,Villarreal CF,2018-2019,La Liga,FALSE
+15,Levante UD,2018-2019,La Liga,FALSE
+16,Real Valladolid,2018-2019,La Liga,FALSE
+17,Celta Vigo,2018-2019,La Liga,FALSE
+18,Girona FC,2018-2019,La Liga,FALSE
+19,SD Huesca,2018-2019,La Liga,FALSE
+20,Rayo Vallecano,2018-2019,La Liga,FALSE
+1,Manchester City,2018-2019,Premier League,TRUE
+2,Liverpool FC,2018-2019,Premier League,TRUE
+3,Chelsea FC,2018-2019,Premier League,TRUE
+4,Tottenham Hotspur,2018-2019,Premier League,TRUE
+5,Arsenal FC,2018-2019,Premier League,FALSE
+6,Manchester United,2018-2019,Premier League,FALSE
+7,Wolverhampton Wanderers,2018-2019,Premier League,FALSE
+8,Everton FC,2018-2019,Premier League,FALSE
+9,Leicester City,2018-2019,Premier League,FALSE
+10,West Ham United,2018-2019,Premier League,FALSE
+11,Watford FC,2018-2019,Premier League,FALSE
+12,Crystal Palace,2018-2019,Premier League,FALSE
+13,Newcastle United,2018-2019,Premier League,FALSE
+14,AFC Bournemouth,2018-2019,Premier League,FALSE
+15,Burnley FC,2018-2019,Premier League,FALSE
+16,Southampton FC,2018-2019,Premier League,FALSE
+17,Brighton & Hove Albion,2018-2019,Premier League,FALSE
+18,Cardiff City,2018-2019,Premier League,FALSE
+19,Fulham FC,2018-2019,Premier League,FALSE
+20,Huddersfield Town,2018-2019,Premier League,FALSE
+1,Juventus,2018-2019,Serie A,TRUE
+2,SSC Napoli,2018-2019,Serie A,TRUE
+3,Atalanta,2018-2019,Serie A,TRUE
+4,Inter,2018-2019,Serie A,TRUE
+5,AC Milan,2018-2019,Serie A,FALSE
+6,AS Roma,2018-2019,Serie A,FALSE
+7,Torino FC,2018-2019,Serie A,FALSE
+8,Lazio Roma,2018-2019,Serie A,FALSE
+9,Sampdoria,2018-2019,Serie A,FALSE
+10,Bologna FC,2018-2019,Serie A,FALSE
+11,Sassuolo Calcio,2018-2019,Serie A,FALSE
+12,Udinese Calcio,2018-2019,Serie A,FALSE
+13,SPAL 2013 Ferrara,2018-2019,Serie A,FALSE
+14,Parma Calcio 1913,2018-2019,Serie A,FALSE
+15,Cagliari Calcio,2018-2019,Serie A,FALSE
+16,ACF Fiorentina,2018-2019,Serie A,FALSE
+17,Genoa CFC,2018-2019,Serie A,FALSE
+18,Empoli FC,2018-2019,Serie A,FALSE
+19,Frosinone Calcio,2018-2019,Serie A,FALSE
+20,Chievo Verona,2018-2019,Serie A,FALSE
+1,Bayern München,2019-2020,Bundesliga,TRUE
+2,Borussia Dortmund,2019-2020,Bundesliga,TRUE
+3,RB Leipzig,2019-2020,Bundesliga,TRUE
+4,Bor. Mönchengladbach,2019-2020,Bundesliga,TRUE
+5,Bayer Leverkusen,2019-2020,Bundesliga,FALSE
+6,1899 Hoffenheim,2019-2020,Bundesliga,FALSE
+7,VfL Wolfsburg,2019-2020,Bundesliga,FALSE
+8,SC Freiburg,2019-2020,Bundesliga,FALSE
+9,Eintracht Frankfurt,2019-2020,Bundesliga,FALSE
+10,Hertha BSC,2019-2020,Bundesliga,FALSE
+11,1. FC Union Berlin,2019-2020,Bundesliga,FALSE
+12,FC Schalke 04,2019-2020,Bundesliga,FALSE
+13,1. FSV Mainz 05,2019-2020,Bundesliga,FALSE
+14,1. FC Köln,2019-2020,Bundesliga,FALSE
+15,FC Augsburg,2019-2020,Bundesliga,FALSE
+16,Werder Bremen,2019-2020,Bundesliga,FALSE
+17,Fortuna Düsseldorf,2019-2020,Bundesliga,FALSE
+18,SC Paderborn 07,2019-2020,Bundesliga,FALSE
+1,Real Madrid,2019-2020,La Liga,TRUE
+2,FC Barcelona,2019-2020,La Liga,TRUE
+3,Atlético Madrid,2019-2020,La Liga,TRUE
+4,Sevilla FC,2019-2020,La Liga,TRUE
+5,Villarreal CF,2019-2020,La Liga,FALSE
+6,Real Sociedad,2019-2020,La Liga,FALSE
+7,Granada CF,2019-2020,La Liga,FALSE
+8,Getafe CF,2019-2020,La Liga,FALSE
+9,Valencia CF,2019-2020,La Liga,FALSE
+10,CA Osasuna,2019-2020,La Liga,FALSE
+11,Athletic Bilbao,2019-2020,La Liga,FALSE
+12,Levante UD,2019-2020,La Liga,FALSE
+13,Real Valladolid,2019-2020,La Liga,FALSE
+14,SD Eibar,2019-2020,La Liga,FALSE
+15,Real Betis,2019-2020,La Liga,FALSE
+16,CD Alavés,2019-2020,La Liga,FALSE
+17,Celta Vigo,2019-2020,La Liga,FALSE
+18,CD Leganés,2019-2020,La Liga,FALSE
+19,RCD Mallorca,2019-2020,La Liga,FALSE
+20,Espanyol Barcelona,2019-2020,La Liga,FALSE
+1,Liverpool FC,2019-2020,Premier League,TRUE
+2,Manchester City,2019-2020,Premier League,TRUE
+3,Manchester United,2019-2020,Premier League,TRUE
+4,Chelsea FC,2019-2020,Premier League,TRUE
+5,Leicester City,2019-2020,Premier League,FALSE
+6,Tottenham Hotspur,2019-2020,Premier League,FALSE
+7,Wolverhampton Wanderers,2019-2020,Premier League,FALSE
+8,Arsenal FC,2019-2020,Premier League,FALSE
+9,Sheffield United,2019-2020,Premier League,FALSE
+10,Burnley FC,2019-2020,Premier League,FALSE
+11,Southampton FC,2019-2020,Premier League,FALSE
+12,Everton FC,2019-2020,Premier League,FALSE
+13,Newcastle United,2019-2020,Premier League,FALSE
+14,Crystal Palace,2019-2020,Premier League,FALSE
+15,Brighton & Hove Albion,2019-2020,Premier League,FALSE
+16,West Ham United,2019-2020,Premier League,FALSE
+17,Aston Villa,2019-2020,Premier League,FALSE
+18,AFC Bournemouth,2019-2020,Premier League,FALSE
+19,Watford FC,2019-2020,Premier League,FALSE
+20,Norwich City,2019-2020,Premier League,FALSE
+1,Juventus,2019-2020,Serie A,TRUE
+2,Inter,2019-2020,Serie A,TRUE
+3,Atalanta,2019-2020,Serie A,TRUE
+4,Lazio Roma,2019-2020,Serie A,TRUE
+5,AS Roma,2019-2020,Serie A,FALSE
+6,AC Milan,2019-2020,Serie A,FALSE
+7,SSC Napoli,2019-2020,Serie A,FALSE
+8,Sassuolo Calcio,2019-2020,Serie A,FALSE
+9,Hellas Verona,2019-2020,Serie A,FALSE
+10,ACF Fiorentina,2019-2020,Serie A,FALSE
+11,Parma Calcio 1913,2019-2020,Serie A,FALSE
+12,Bologna FC,2019-2020,Serie A,FALSE
+13,Udinese Calcio,2019-2020,Serie A,FALSE
+14,Cagliari Calcio,2019-2020,Serie A,FALSE
+15,Sampdoria,2019-2020,Serie A,FALSE
+16,Torino FC,2019-2020,Serie A,FALSE
+17,Genoa CFC,2019-2020,Serie A,FALSE
+18,US Lecce,2019-2020,Serie A,FALSE
+19,Brescia Calcio,2019-2020,Serie A,FALSE
+20,SPAL 2013 Ferrara,2019-2020,Serie A,FALSE
+1,Bayern München,2020-2021,Bundesliga,TRUE
+2,RB Leipzig,2020-2021,Bundesliga,TRUE
+3,Borussia Dortmund,2020-2021,Bundesliga,TRUE
+4,VfL Wolfsburg,2020-2021,Bundesliga,TRUE
+5,Eintracht Frankfurt,2020-2021,Bundesliga,FALSE
+6,Bayer Leverkusen,2020-2021,Bundesliga,FALSE
+7,1. FC Union Berlin,2020-2021,Bundesliga,FALSE
+8,Bor. Mönchengladbach,2020-2021,Bundesliga,FALSE
+9,VfB Stuttgart,2020-2021,Bundesliga,FALSE
+10,SC Freiburg,2020-2021,Bundesliga,FALSE
+11,1899 Hoffenheim,2020-2021,Bundesliga,FALSE
+12,1. FSV Mainz 05,2020-2021,Bundesliga,FALSE
+13,FC Augsburg,2020-2021,Bundesliga,FALSE
+14,Hertha BSC,2020-2021,Bundesliga,FALSE
+15,Arminia Bielefeld,2020-2021,Bundesliga,FALSE
+16,1. FC Köln,2020-2021,Bundesliga,FALSE
+17,Werder Bremen,2020-2021,Bundesliga,FALSE
+18,FC Schalke 04,2020-2021,Bundesliga,FALSE
+1,Atlético Madrid,2020-2021,La Liga,TRUE
+2,Real Madrid,2020-2021,La Liga,TRUE
+3,FC Barcelona,2020-2021,La Liga,TRUE
+4,Sevilla FC,2020-2021,La Liga,TRUE
+5,Real Sociedad,2020-2021,La Liga,FALSE
+6,Real Betis,2020-2021,La Liga,FALSE
+7,Villarreal CF,2020-2021,La Liga,FALSE
+8,Celta Vigo,2020-2021,La Liga,FALSE
+9,Granada CF,2020-2021,La Liga,FALSE
+10,Athletic Bilbao,2020-2021,La Liga,FALSE
+11,CA Osasuna,2020-2021,La Liga,FALSE
+12,Cádiz CF,2020-2021,La Liga,FALSE
+13,Valencia CF,2020-2021,La Liga,FALSE
+14,Levante UD,2020-2021,La Liga,FALSE
+15,Getafe CF,2020-2021,La Liga,FALSE
+16,CD Alavés,2020-2021,La Liga,FALSE
+17,Elche CF,2020-2021,La Liga,FALSE
+18,SD Huesca,2020-2021,La Liga,FALSE
+19,Real Valladolid,2020-2021,La Liga,FALSE
+20,SD Eibar,2020-2021,La Liga,FALSE
+1,Manchester City,2020-2021,Premier League,TRUE
+2,Manchester United,2020-2021,Premier League,TRUE
+3,Liverpool FC,2020-2021,Premier League,TRUE
+4,Chelsea FC,2020-2021,Premier League,TRUE
+5,Leicester City,2020-2021,Premier League,FALSE
+6,West Ham United,2020-2021,Premier League,FALSE
+7,Tottenham Hotspur,2020-2021,Premier League,FALSE
+8,Arsenal FC,2020-2021,Premier League,FALSE
+9,Leeds United,2020-2021,Premier League,FALSE
+10,Everton FC,2020-2021,Premier League,FALSE
+11,Aston Villa,2020-2021,Premier League,FALSE
+12,Newcastle United,2020-2021,Premier League,FALSE
+13,Wolverhampton Wanderers,2020-2021,Premier League,FALSE
+14,Crystal Palace,2020-2021,Premier League,FALSE
+15,Southampton FC,2020-2021,Premier League,FALSE
+16,Brighton & Hove Albion,2020-2021,Premier League,FALSE
+17,Burnley FC,2020-2021,Premier League,FALSE
+18,Fulham FC,2020-2021,Premier League,FALSE
+19,West Bromwich Albion,2020-2021,Premier League,FALSE
+20,Sheffield United,2020-2021,Premier League,FALSE
+1,Inter,2020-2021,Serie A,TRUE
+2,AC Milan,2020-2021,Serie A,TRUE
+3,Atalanta,2020-2021,Serie A,TRUE
+4,Juventus,2020-2021,Serie A,TRUE
+5,SSC Napoli,2020-2021,Serie A,FALSE
+6,Lazio Roma,2020-2021,Serie A,FALSE
+7,AS Roma,2020-2021,Serie A,FALSE
+8,Sassuolo Calcio,2020-2021,Serie A,FALSE
+9,Sampdoria,2020-2021,Serie A,FALSE
+10,Hellas Verona,2020-2021,Serie A,FALSE
+11,Genoa CFC,2020-2021,Serie A,FALSE
+12,Bologna FC,2020-2021,Serie A,FALSE
+13,ACF Fiorentina,2020-2021,Serie A,FALSE
+14,Udinese Calcio,2020-2021,Serie A,FALSE
+15,Spezia Calcio,2020-2021,Serie A,FALSE
+16,Cagliari Calcio,2020-2021,Serie A,FALSE
+17,Torino FC,2020-2021,Serie A,FALSE
+18,Benevento Calcio,2020-2021,Serie A,FALSE
+19,FC Crotone,2020-2021,Serie A,FALSE
+20,Parma Calcio 1913,2020-2021,Serie A,FALSE

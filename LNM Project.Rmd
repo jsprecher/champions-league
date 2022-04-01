@@ -1,0 +1,511 @@
+---
+title: "LNM Project"
+author: "Ziyoda,Kat,Jake,Bimal"
+date: "3/12/2022"
+output: html_document
+---
+
+
+**Loading the data.**
+
+```{r setup}
+library(xgboost)
+library(tidyverse)
+library(fastDummies)
+library(ggpubr)
+```
+
+```{r clean data}
+fifa_15 <- read_csv('players/players_15.csv') %>% mutate(season = 2015)
+fifa_16 <- read_csv('players/players_16.csv') %>% mutate(season = 2016)
+fifa_17 <- read_csv('players/players_17.csv') %>% mutate(season = 2017)
+fifa_18 <- read_csv('players/players_18.csv') %>% mutate(season = 2018)
+fifa_19 <- read_csv('players/players_19.csv') %>% mutate(season = 2019)
+fifa_20 <- read_csv('players/players_20.csv') %>% mutate(season = 2020)
+fifa_21 <- read_csv('players/players_21.csv') %>% mutate(season = 2021)
+
+
+player_data <- fifa_15 %>% bind_rows(fifa_16, fifa_17, fifa_18, fifa_19, fifa_20, fifa_21)
+
+# translate work rates to numeric
+work_rates <- c("High"="3",
+                "Medium"="2",
+                "Low"="1")
+
+attack_positions <- c("CF"="attack",
+                      "LW"="attack",
+                      "ST"="attack",
+                      "LF"="attack",
+                      "RAM"="attack",
+                      "LAM"="attack",
+                      "RF"="attack",
+                      "RS"="attack",
+                      "RW"="attack",
+                      "LS"="attack",
+                      "CAM"="mid")
+
+mid_positions <- c("LCM"="mid",
+                   "LM"="mid",
+                   "RCM"="mid",
+                   "CM"="mid",
+                   "CDM"="mid",
+                   "RM"="mid",
+                   "RDM"="mid",
+                   "LDM"="mid")
+
+defense_positions <- c("LCB"="def",
+                       "RCB"="def",
+                       "CB"="def",
+                       "RB"="def",
+                       "LB"="def",
+                       "GK"="def",
+                       "RWB"="def",
+                       "LWB"="def")
+
+position_categories <- c(attack_positions, mid_positions, defense_positions)
+
+position_ratings <- player_data %>% select(short_name, season, club_name, any_of(str_to_lower(names(position_categories)))) %>%
+  pivot_longer(-c(short_name, season,club_name), names_to='position', values_to = 'rating') %>%
+  mutate(rating = as.numeric(str_extract(rating,'([0-9]{2})'))) %>% 
+  group_by(season, short_name, club_name) %>%
+  arrange(desc(rating)) %>%
+  filter(row_number()==1) %>%
+  mutate(position = str_to_upper(position))
+  
+player_and_position <- player_data %>% 
+  left_join(position_ratings,by=c('season','short_name','club_name')) %>% 
+  filter(league_name %in% c('Spain Primera Division','Italian Serie A','English Premier League', 'German 1. Bundesliga')) %>%
+  mutate(position_group = str_replace_all(position,position_categories)) %>% 
+  mutate(work_rate = str_replace_all(work_rate, work_rates)) %>%
+  separate(work_rate,into = c('offensive_work_rate','defensive_work_rate'), sep = '/', remove = T, convert = T) %>%
+  select(league_rank,club_name, season,position_group, rating, value_eur,age, offensive_work_rate, defensive_work_rate)
+
+team_data <- player_and_position %>% mutate(qualify = league_rank <= 4) %>%
+  group_by(season, club_name) %>%
+  summarize(avg_rating = mean(rating),
+            team_market_value = sum(value_eur),
+            top_rating = max(rating),
+            avg_age = mean(age),
+            avg_attack_rating = mean(rating[position_group=='attack']),
+            avg_mid_rating = mean(rating[position_group=='mid']),
+            avg_defense_rating = mean(rating[position_group=='def']),
+            top_attack_rating = max(rating[position_group=='attack'],na.rm=T),
+            top_mid_rating = max(rating[position_group=='mid'],na.rm=T),
+            top_defense_rating = max(rating[position_group=='def'],na.rm=T),
+            offensive_work_rate = mean(offensive_work_rate),
+            defensive_work_rate = mean(defensive_work_rate))
+
+names_translate <- c("Arsenal"="Arsenal FC",
+  "Athletic Club de Bilbao"="Athletic Bilbao",
+  "Bayer 04 Leverkusen"="Bayer Leverkusen",
+  "Benevento"="Benevento Calcio",
+  "Bologna"="Bologna FC",
+  "Borussia Mönchengladbach"="Bor. Mönchengladbach",
+  "Bournemouth"="AFC Bournemouth",
+  "Brescia"="Brescia Calcio",
+  "Burnley"="Burnley FC",
+  "Cagliari"="Cagliari Calcio",
+  "Carpi"="Carpi FC",
+  "Cesena"="AC Cesena",
+  "Chelsea"="Chelsea FC",
+  "Crotone"="FC Crotone",
+  "Deportivo Alavés"="CD Alavés",
+  "Deportivo de La Coruña"="Deportivo La Coruña",
+  "DSC Arminia Bielefeld"="Arminia Bielefeld",
+  "Empoli"="Empoli FC",
+  "Everton"="Everton FC",
+  "FC Bayern München"="Bayern München",
+  "Fiorentina"="ACF Fiorentina",
+  "Frosinone"="Frosinone Calcio",
+  "Fulham"="Fulham FC",
+  "Genoa"="Genoa CFC",
+  "Roma"="AS Roma",
+  "Lazio"="Lazio Roma",
+  "Lecce"="US Lecce",
+  "Liverpool"="Liverpool FC",
+  "Middlesbrough"="Middlesbrough FC",
+  "Milan"="AC Milan",
+  "Napoli"="SSC Napoli",
+  "Palermo"="US Palermo",
+  "Parma"="Parma Calcio 1913",
+  "Pescara"="Pescara Calcio",
+  "RC Celta"="Celta Vigo",
+  "RCD Espanyol"="Espanyol Barcelona",
+  "Real Sporting de Gijón"="Sporting Gijón",
+  "Real Valladolid CF"="Real Valladolid",
+  "Sassuolo"="Sassuolo Calcio",
+  "Southampton"="Southampton FC",
+  "SPAL"="SPAL 2013 Ferrara",
+  "Spezia"="Spezia Calcio",
+  "Sunderland"="Sunderland AFC",
+  "SV Werder Bremen"="Werder Bremen",
+  "Torino"="Torino FC",
+  "TSG 1899 Hoffenheim"="1899 Hoffenheim",
+  "Udinese"="Udinese Calcio",
+  "Watford"="Watford FC")
+
+league_rankings <- read_csv('qualifications.txt') %>% mutate(Season = as.numeric(str_extract(substr(Season,6,10),'[0-9]{4}')))
+
+fifa <- team_data %>% mutate(Team = str_replace_all(club_name, names_translate)) %>%
+  left_join(league_rankings,by=c('season'='Season','Team')) %>%
+  select(-Team) %>% 
+  rename(Team=club_name,Season=season) %>%
+  select(Team,Season,League,qualify,avg_rating,team_market_value, top_rating, avg_age,
+         avg_attack_rating, avg_mid_rating, avg_defense_rating, top_attack_rating,top_mid_rating,top_defense_rating)
+
+```
+
+**Checking for null values**
+
+```{r}
+any(is.na(fifa))
+```
+
+
+
+**Converting string variable to numeric as XGBoost requires output variable to be numeric**
+
+```{r}
+
+
+fifa$qualifyint <- as.integer(fifa$qualify)
+
+head(fifa[,c(5,15)],10) #1st and 3rd columns
+
+head(fifa)
+```
+
+**Exploring team attributes based on qualification**
+
+
+```{r}
+a<-ggplot(data=fifa, aes(x=qualify, y=avg_age )) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+  labs(title = "Effect of Average Age of Squad",
+       subtitle = "Age doesn't seem to affect qualification",
+       x = "Qualification", y = "Age") 
+
+b<-ggplot(data=fifa, aes(x=qualify, y=avg_rating)) +
+  #geom_bar(stat="summary",fun="mean",fill="steelblue")+
+   geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Squad Rating",
+       subtitle = "Rating of qualified team are higher",
+       x = "Qualification", y = "Rating") 
+
+c<-ggplot(data=fifa, aes(x=qualify, y=team_market_value)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Market Value",
+       subtitle = "Difference in market value is significant",
+       x = "Qualification", y = "Market Value") 
+
+d<-ggplot(data=fifa, aes(x=qualify, y=avg_attack_rating)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Attack Rating",
+       subtitle = "Attack of qualified team are higher",
+       x = "Qualification", y = "Attack Rating") 
+
+e<-ggplot(data=fifa, aes(x=qualify, y=avg_mid_rating)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Midfield Rating",
+       subtitle = "Midfield of qualified team are higher",
+       x = "Qualification", y = "Attack Rating") 
+
+
+f<-ggplot(data=fifa, aes(x=qualify, y=avg_defense_rating)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Defense Rating",
+       subtitle = "Defense of qualified team are higher",
+       x = "Qualification", y = "Defense Rating") 
+
+
+
+figure <- ggarrange(e, f,b,d,
+                    #labels = c("Adfdfd", "B","C"),
+                    ncol = 2, nrow = 2)
+figure
+
+
+figure <- ggarrange(a,c,
+                    #labels = c("Adfdfd", "B","C"),
+                    ncol = 2, nrow = 1)
+figure
+
+
+
+
+
+```
+
+**Exploring Individual attributes based on qualification**
+
+
+
+
+```{r}
+
+
+a<-ggplot(data=fifa, aes(x=qualify, y=top_rating )) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+  labs(title = "Effect of Average Top Rating",
+       subtitle = "Top rating of qualified team are higher",
+       x = "Qualification", y = "Top Rating") 
+
+
+b<-ggplot(data=fifa, aes(x=qualify, y=top_attack_rating)) +
+   geom_boxplot(outlier.shape = NA, width=0.5)+
+  #geom_jitter(width=0.15, alpha=0.5)+
+    labs(title = "Effect of Average Top Attack Rating",
+       subtitle = "Top attack of qualified team are higher",
+       x = "Qualification", y = "Top Attack") 
+
+
+c<-ggplot(data=fifa, aes(x=qualify, y=top_mid_rating)) +
+   geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Top Midfield Rating",
+       subtitle = "Top midfield of qualified team are higher",
+       x = "Qualification", y = "Top Midfield") 
+
+d<-ggplot(data=fifa, aes(x=qualify, y=top_defense_rating)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+  labs(title = "Effect of Average Top Defense Rating",
+       subtitle = "Top defense of qualified team are higher",
+       x = "Qualification", y = "Top Defense") 
+
+
+figure <- ggarrange(a, b,c,d,
+                    #labels = c("Adfdfd", "B","C"),
+                    ncol = 2, nrow = 2)
+figure
+
+
+
+```
+
+
+**The above trend is true from 2015-2020**
+
+
+```{r}
+
+
+ggplot(data=fifa, aes(x=qualify, y=top_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+ggplot(data=fifa, aes(x=qualify, y=avg_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+ggplot(data=fifa, aes(x=qualify, y=team_market_value ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+ggplot(data=fifa, aes(x=qualify, y=top_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+
+ggplot(data=fifa, aes(x=qualify, y=avg_age ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+
+ggplot(data=fifa, aes(x=qualify, y=avg_attack_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+ggplot(data=fifa, aes(x=qualify, y=avg_mid_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+ggplot(data=fifa, aes(x=qualify, y=avg_defense_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+
+ggplot(data=fifa, aes(x=qualify, y=top_attack_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+
+ggplot(data=fifa, aes(x=qualify, y=top_mid_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+ggplot(data=fifa, aes(x=qualify, y=top_defense_rating ))+
+  geom_boxplot(outlier.shape = NA, width=0.5)+
+  facet_wrap(~Season)+
+  theme(legend.position="none")
+
+
+
+```
+
+
+
+
+
+```{r}
+
+
+a<-ggplot(data=fifa, aes(x=League, y=top_mid_rating)) +
+   geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Top Midfield Rating",
+       subtitle = "Top midfield of qualified team are higher",
+       x = "Qualification", y = "Top Midfield") 
+
+a
+
+
+```
+
+
+**Comparing League Quality**
+
+
+```{r}
+
+
+a<-ggplot(data=fifa, aes(x=qualify, y=top_rating ,fill=League)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+  labs(title = "Effect of Average Top Rating",
+       subtitle = "La Liga has the best players",
+       x = "Qualification", y = "Top Rating") 
+
+
+b<-ggplot(data=fifa, aes(x=qualify, y=top_attack_rating,fill=League)) +
+   geom_boxplot(outlier.shape = NA, width=0.5)+
+  #geom_jitter(width=0.15, alpha=0.5)+
+    labs(title = "Effect of Average Top Attack Rating",
+       subtitle = "La Liga has the best attackers",
+       x = "Qualification", y = "Top Attack") 
+
+
+c<-ggplot(data=fifa, aes(x=qualify, y=top_mid_rating,fill=League)) +
+   geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Top Midfield Rating",
+       subtitle = "La Liga and Premier League have the best midfield",
+       x = "Qualification", y = "Top Midfield") 
+
+d<-ggplot(data=fifa, aes(x=qualify, y=top_defense_rating,fill=League)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+  labs(title = "Effect of Average Top Defense Rating",
+       subtitle = "La Liga have the best defense",
+       x = "Qualification", y = "Top Defense") 
+
+
+figure <- ggarrange(a, b,c,d,
+                    #labels = c("Adfdfd", "B","C"),
+                    ncol = 2, nrow = 2)
+figure
+
+
+
+```
+
+
+
+
+
+```{r}
+
+
+a<-ggplot(data=fifa, aes(x=qualify, y=avg_age,fill=League )) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+  labs(title = "Effect of Average Age of Squad",
+       subtitle = "Older players are important in Italy",
+       x = "Qualification", y = "Age") 
+
+
+b<-ggplot(data=fifa, aes(x=qualify, y=avg_rating,fill=League)) +
+  #geom_bar(stat="summary",fun="mean",fill="steelblue")+
+   geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Squad Rating",
+       subtitle = "La Liga has the best players",
+       x = "Qualification", y = "Rating") 
+
+
+c<-ggplot(data=fifa, aes(x=qualify, y=team_market_value,fill=League)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Market Value",
+       subtitle = "La Liga has the most expensive squad",
+       x = "Qualification", y = "Market Value") 
+
+d<-ggplot(data=fifa, aes(x=qualify, y=avg_attack_rating,fill=League)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Attack Rating",
+       subtitle = "La Liga has the best attackers",
+       x = "Qualification", y = "Attack Rating") 
+
+e<-ggplot(data=fifa, aes(x=qualify, y=avg_mid_rating,fill=League)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Midfield Rating",
+       subtitle = "La Liga has the best midfilders",
+       x = "Qualification", y = "Attack Rating") 
+
+
+f<-ggplot(data=fifa, aes(x=qualify, y=avg_defense_rating,fill=League)) +
+ geom_boxplot(outlier.shape = NA, width=0.5)+
+    labs(title = "Effect of Average Defense Rating",
+       subtitle = "La Liga has the best defense",
+       x = "Qualification", y = "Defense Rating") 
+
+figure <- ggarrange(e, f,b,d,
+                    #labels = c("Adfdfd", "B","C"),
+                    ncol = 2, nrow = 2)
+figure
+
+
+figure <- ggarrange(a,c,
+                    #labels = c("Adfdfd", "B","C"),
+                    ncol = 2, nrow = 1)
+figure
+
+
+
+
+```
+
+
+
+
+
+```{r}
+
+train_dat <- fifa %>% filter(Season < 2020) %>% dummy_cols(select_columns='League',remove_selected_columns = T)
+test_dat <- fifa %>% filter(Season >= 2020) %>% dummy_cols(select_columns='League',remove_selected_columns = T)
+
+X_train <- train_dat %>% select(-c(qualify,qualifyint,Team,Season,qualify)) %>% as.matrix()
+y_train <- train_dat %>% pull(qualify) %>% as.numeric()
+
+bst <- xgboost(data =X_train,
+               label = y_train, 
+               nrounds = 2,
+               objective = "binary:logistic",
+               params = list(gamma=7, lambda=5, base_score=0.5, eta=0.3))
+
+xgb.plot.tree(model = bst)
+
+
+
+
+```
